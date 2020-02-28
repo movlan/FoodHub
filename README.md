@@ -4,19 +4,21 @@ SEI CC 07 Project 2
 by Bahram Movlanov
 
 **FoodHub App**
-This is recipes storing app. This app allows users to save favourite recipes from YouTube. Users allowed to share, comment and rate recipes
+
+This is recipes storing app. This app allows users to save favorite recipes from YouTube. Users allowed to share, comment and rate recipes
 
  **Screenshots**
-    App screenshots:
 
-    ERD Schemas
+App screenshots:
 
-    ![](./images/FoodHubERD.png)
+ERD Schemas
 
+[](/images/FoodHubERD.png)
 
 
   
  **Technologies Used**:
+
  This app is build using following technologies:
  Node.JS
   expressJS
