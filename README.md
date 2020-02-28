@@ -13,7 +13,7 @@ App screenshots:
 
 ERD Schemas
 
-[](/images/FoodHubERD.png)
+![](/images/FoodHubERD.png)
 
 
   
