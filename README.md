@@ -15,7 +15,7 @@ App screenshots:
 #### HOME PAGE
 ![](/images/home_page.png)
 
-#### SHOW PAGE
+#### SHOW PAG`E
 ![](/images/show_page.png)
 
 #### ADD RECIPE PAGE
