@@ -1,7 +1,8 @@
 ## SEI-Project-2-FoodHub
-SEI CC 07 Project 2 FoodHub by Bahram Movlanov
+SEI CC 07 Project 2 #FoodHub#
+by Bahram Movlanov
 
-☐ **FoodHub App**
+**FoodHub App**
 This is resepie storing app. This app allows users to save favourite recepies from YouTube. Users allowed to share, comment and rate resepies
 
  **Screenshots**
