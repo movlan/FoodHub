@@ -37,6 +37,10 @@ This app is build using following technologies:
    - expressJS
    - ejs
    - mongoose
+   - express-session
+   - dotenv
+   - passport
+   - method-override
 -  Database
    -  MongoDB 
     

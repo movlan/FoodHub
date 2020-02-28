@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+var app = require('../server');
 var debug = require('debug')('sei-project-2-foodhub:server');
 var http = require('http');
 
