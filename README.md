@@ -1,29 +1,49 @@
 ## SEI-Project-2-FoodHub
 SEI CC 07 Project 2 
 # FoodHub
-by Bahram Movlanov
+### Node/Express/MongoDB
+### Full-stack CRUD Application
 
 **FoodHub App**
 
-This is recipes storing app. This app allows users to save favorite recipes from YouTube. Users allowed to share, comment and rate recipes
+This is recipe storing app. This app allows users to save favorite recipes from YouTube with a link to YouTube page. Users allowed to share, comment and rate recipes
 
  **Screenshots**
 
 App screenshots:
 
-ERD Schemas
+#### HOME PAGE
+![](/images/home_page.png)
 
-[](/images/FoodHubERD.png)
+#### SHOW PAGE
+![](/images/show_page.png)
 
+#### ADD RECIPE PAGE
+![](/images/submit_add_recipe_page.png)
 
-  
- **Technologies Used**:
+#### ERD Schemas
 
- This app is build using following technologies:
- Node.JS
-  expressJS
-  ejs
+![](/images/FoodHubERD.png)
+
+**Technologies Used**:
+
+This app is build using following technologies:
+- Languages:
+   - JavaScript
+   - HTML
+   - CSS
+- Frameworks & Libraries
+   - Node.JS
+   - expressJS
+   - ejs
+   - mongoose
+-  Database
+   -  MongoDB 
     
- **Getting Started**: Include a link to the deployed app and your Trello board with the project's planning.
+**Getting Started**:
+
+[Link to app (not deployed yet)]()
+
+[Link to Trello](https://trello.com/b/FPm3mnkX/user-stories)
   
- **Next Steps**: Planned future enhancements (icebox items).
+**Next Steps**: Planned future enhancements (icebox items).
