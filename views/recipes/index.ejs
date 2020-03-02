@@ -1,0 +1,11 @@
+<%- include('../partials/header') %> 
+
+<% if (recipes.length) { %>
+    <% recipes.forEach(recipe => { %>
+        <h3><%= recipe.name %> </h3>
+    <% }) %> 
+<% } else { %>
+    <h3>No Recipes Yet</h3>
+<% }; %>
+
+<%- include('../partials/footer') %> 

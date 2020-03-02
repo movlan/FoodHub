@@ -1,0 +1,17 @@
+<%- include('partials/header', {title: 'FoodHub'}) %> 
+
+<div>
+    <form action="/recipes" method="POST">
+        <label>Name of Recipe:</label>
+        <input type="text" name="name" required>
+        <label>YouTube Link:</label>
+        <input type="text" name="youTubeLink" required>
+        <label>Directions:</label>
+        <input type="text" name="directions" required>
+        <label>Ingredients:</label>
+        <input type="text" name="ingredients" required>
+        <input type="submit" value="Add Recipe">
+    </form>
+</div>
+
+<%- include('partials/footer') %> 
