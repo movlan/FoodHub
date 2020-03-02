@@ -7,4 +7,14 @@
   <title> <%= title %> </title>
 </head>
 <body>
+    <nav>
+        <a href="">LOGO HERE</a>
+        <ul>
+            <% if (user) { %>
+                <a href="/logout">Log Out</a>
+            <% } else { %>
+                <a href="/auth/google">Login with Google</a>
+            <% } %> 
+        </ul>
+    </nav>
     <h1> <%= title %> </h1>
