@@ -1,0 +1,38 @@
+<%- include('../partials/header') %> 
+
+<div>
+    <h2><%= `${recipe.name}` %></h2>
+    <a href="<%= recipe.youTubeLink %>">YouTube Link</a>
+    <p><%= `Ingredients:` %></p>
+    <p> <%= `${recipe.ingredients}` %></p>
+    <p> <%= `Directions:` %></p>
+    <p> <%= `${recipe.directions}` %> </p>
+    <p><%= `Submitted by ${recipe.author[0].name}` %></p>
+</div>
+<% if (user) { %> 
+<div>
+    <h3>Add Comment</h3>
+    <form action="/recipes/<%= recipe._id %>/comments" method="POST">
+        <label>Comment:</label>
+        <textarea name="comment" required></textarea>
+        <input type="hidden" name="author" value="<%= user._id %>">
+        <input type="hidden" name="name" value="<%= user.name %>">
+        <input type="submit" value="Add Comment">
+    </form>
+</div>
+<% } %>
+<h3>Comments:</h3>
+<% if (recipe.comments.length) { %> 
+    <% recipe.comments.forEach(comment => { %>
+        <div>
+            <h5><%= comment.author %></h5>
+        </div>
+        <div>
+            <p><%= comment.comment %></p>
+        </div>
+    <% }); %>
+<% } else { %>
+    <p>No comments yet</p>
+<% } %>  
+</div>
+<%- include('../partials/footer') %> 

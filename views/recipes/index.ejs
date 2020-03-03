@@ -2,7 +2,8 @@
 
 <% if (recipes.length) { %>
     <% recipes.forEach(recipe => { %>
-        <h3><%= recipe.name %> </h3>
+        <h3><%= recipe._id%> </h3>
+        <a href="/recipes/<%= recipe._id %>">More</a>
     <% }) %> 
 <% } else { %>
     <h3>No Recipes Yet</h3>

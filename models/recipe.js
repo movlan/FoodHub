@@ -6,6 +6,7 @@ const commentSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     }],
+    name: String,
     comment: {
         type: String,
         required: true
@@ -39,7 +40,7 @@ const recipeSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     }],
-    comment: [commentSchema],
+    comments: [commentSchema],
     rating: [ratingSchema]
 }, {
     timestamps: true

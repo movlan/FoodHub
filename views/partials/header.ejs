@@ -7,14 +7,17 @@
   <title> <%= title %> </title>
 </head>
 <body>
-    <nav>
-        <a href="">LOGO HERE</a>
-        <ul>
-            <% if (user) { %>
-                <a href="/logout">Log Out</a>
-            <% } else { %>
-                <a href="/auth/google">Login with Google</a>
-            <% } %> 
-        </ul>
-    </nav>
-    <h1> <%= title %> </h1>
+    <header>
+        <h1>FoodHub</h1>
+        <nav>
+            <ul>
+                <% if (user) { %>
+                    <a href="/recipes/new">Add Recipe</a>
+                    <a href="/user/<%= user._id %>">Your Profile</a>
+                    <a href="/logout">Log Out</a>
+                <% } else { %>
+                    <a href="/auth/google">Login with Google</a>
+                <% } %> 
+            </ul>
+        </nav>
+    </header>

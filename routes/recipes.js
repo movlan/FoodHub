@@ -4,5 +4,8 @@ const passport = require('passport');
 const recipesCtrl = require('../controllers/recipes')
 
 router.get('/', recipesCtrl.index);
+router.get('/new', recipesCtrl.new);
+router.get('/:id', recipesCtrl.show);
+router.post('/', recipesCtrl.create);
 
 module.exports = router;
