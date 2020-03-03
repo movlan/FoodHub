@@ -8,6 +8,11 @@
     <p> <%= `Directions:` %></p>
     <p> <%= `${recipe.directions}` %> </p>
     <p><%= `Submitted by ${recipe.author[0].name}` %></p>
+    <% if (user) { %>
+        <% if (user._id.equals(recipe.author[0]._id)) { %> 
+        <a href="/recipes/<%= recipe._id %>/edit">Edit Recipe</a>
+        <% } %> 
+    <% } %> 
 </div>
 <% if (user) { %> 
 <div>
@@ -16,7 +21,6 @@
         <label>Comment:</label>
         <textarea name="comment" required></textarea>
         <input type="hidden" name="author" value="<%= user._id %>">
-        <input type="hidden" name="name" value="<%= user.name %>">
         <input type="submit" value="Add Comment">
     </form>
 </div>
@@ -25,12 +29,17 @@
 <% if (recipe.comments.length) { %> 
     <% recipe.comments.forEach(comment => { %>
         <div>
-            <h5><%= comment.author %></h5>
+            <h5><%= comment.author[0].name %></h5>
         </div>
         <div>
             <p><%= comment.comment %></p>
         </div>
     <% }); %>
+    <% if (user) { %>
+        <% if (user._id.equals(recipe.author[0]._id)) { %> 
+        <a href="/coments/<%= recipe._id %>/edit">Edit Comment</a>
+        <% } %> 
+    <% } %>
 <% } else { %>
     <p>No comments yet</p>
 <% } %>  

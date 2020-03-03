@@ -13,7 +13,7 @@
             <ul>
                 <% if (user) { %>
                     <a href="/recipes/new">Add Recipe</a>
-                    <a href="/user/<%= user._id %>">Your Profile</a>
+                    <a href="/users/<%= user._id %>">Your Profile</a>
                     <a href="/logout">Log Out</a>
                 <% } else { %>
                     <a href="/auth/google">Login with Google</a>

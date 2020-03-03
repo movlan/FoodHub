@@ -5,21 +5,35 @@ module.exports = {
     index,
     new: newRecipe,
     create,
-    show
+    show,
+    edit,
+    update
+}
+
+function update(req, res) {
+    console.log('We are at UPDATE CTRL')
+    Recipe.update(req.params.id, req.body, {new: true}, function(err, recipe) {
+        res.render('recipes/show', {title: recipe.name, recipe, user: req.user});
+    });
+}
+
+function edit(req, res) {
+    Recipe.findById(req.params.id)
+    .populate('author', 'name')
+    .populate('comments.author', 'name')
+    .exec( function(err, recipe) {
+        // console.log(recipe)
+        res.render('recipes/edit', {title: recipe.name, recipe, user: req.user});
+    });
 }
 
 function show(req, res) {
-    console.log(req.user.name);
+    // console.log(req.user.name);
     Recipe.findById(req.params.id)
     .populate('author', 'name')
-    // .populate({ 
-    //     path: 'comments',
-    //     populate: {
-    //         path: 'author',
-    //         model: 'User'
-    //     }
-    // })
+    .populate('comments.author', 'name')
     .exec( function(err, recipe) {
+        // console.log(recipe)
         res.render('recipes/show', {title: recipe.name, recipe, user: req.user});
     }
 )};
@@ -27,6 +41,7 @@ function show(req, res) {
 function create(req, res) {
     req.body.author = req.user._id
     Recipe.create(req.body, function(err, recipe) {
+        console.log(recipe)
         res.redirect(`recipes/${recipe._id}`);
     });
 }

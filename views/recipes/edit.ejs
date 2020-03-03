@@ -1,0 +1,17 @@
+<%- include('../partials/header') %> 
+
+<div>
+    <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
+        <label>Name of Recipe:</label>
+        <input type="text" name="name" value="<%= recipe.name %>" required>
+        <label>YouTube Link:</label>
+        <input type="text" name="youTubeLink" value="<%= recipe.youTubeLink %>" required>
+        <label>Directions:</label>
+        <input type="text" name="directions" value="<%= recipe.directions %>" required>
+        <label>Ingredients:</label>
+        <input type="text" name="ingredients" value="<%= recipe.ingredients%>" required>
+        <input type="submit" value="Update Recipe">
+    </form>
+</div>
+
+<%- include('../partials/footer') %> 
