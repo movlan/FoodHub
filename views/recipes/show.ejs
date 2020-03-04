@@ -10,7 +10,12 @@
     <p><%= `Submitted by ${recipe.author[0].name}` %></p>
     <% if (user) { %>
         <% if (user._id.equals(recipe.author[0]._id)) { %> 
-        <a href="/recipes/<%= recipe._id %>/edit">Edit Recipe</a>
+        <form action="/recipes/<%= recipe._id %>/edit" method="GET">
+            <button type="submit">EDIT</button>
+        </form>
+        <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+            <button type="submit">DELETE</button>
+        </form>
         <% } %> 
     <% } %> 
 </div>
@@ -34,12 +39,17 @@
         <div>
             <p><%= comment.comment %></p>
         </div>
+        <% if (user) { %>
+            <% if (user._id.equals(recipe.author[0]._id)) { %> 
+                <form action="/comments/<%= recipe._id %>/edit" method="GET">
+                    <button type="submit">EDIT</button>
+                </form>
+                <form action="/comments/<%= recipe._id %>?_method=DELETE" method="POST">
+                    <button type="submit">DELETE</button>
+                </form>
+            <% } %> 
+        <% } %>
     <% }); %>
-    <% if (user) { %>
-        <% if (user._id.equals(recipe.author[0]._id)) { %> 
-        <a href="/coments/<%= recipe._id %>/edit">Edit Comment</a>
-        <% } %> 
-    <% } %>
 <% } else { %>
     <p>No comments yet</p>
 <% } %>  

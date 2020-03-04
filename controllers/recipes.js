@@ -7,13 +7,20 @@ module.exports = {
     create,
     show,
     edit,
-    update
+    update,
+    delete: deleteRecipe
+}
+
+function deleteRecipe(req, res) {
+    Recipe.findByIdAndDelete(req.params.id, function(err, recipe) {
+        res.redirect('/recipes');
+    });
 }
 
 function update(req, res) {
-    console.log('We are at UPDATE CTRL')
-    Recipe.update(req.params.id, req.body, {new: true}, function(err, recipe) {
-        res.render('recipes/show', {title: recipe.name, recipe, user: req.user});
+    Recipe.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, recipe) {
+        console.log(recipe)
+        res.redirect('/recipes');
     });
 }
 
@@ -41,7 +48,7 @@ function show(req, res) {
 function create(req, res) {
     req.body.author = req.user._id
     Recipe.create(req.body, function(err, recipe) {
-        console.log(recipe)
+        // console.log(recipe)
         res.redirect(`recipes/${recipe._id}`);
     });
 }
