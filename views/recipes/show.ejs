@@ -2,11 +2,11 @@
 
 <div>
     <h2><%= `${recipe.name}` %></h2>
-    <a href="<%= recipe.youTubeLink %>">YouTube Link</a>
-    <p><%= `Ingredients:` %></p>
-    <p> <%= `${recipe.ingredients}` %></p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= recipe.youTubeLink.slice(32) %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <p> <%= `Directions:` %></p>
     <p> <%= `${recipe.directions}` %> </p>
+    <p><%= `Ingredients:` %></p>
+    <p> <%= `${recipe.ingredients}` %></p>
     <p><%= `Submitted by ${recipe.author[0].name}` %></p>
     <% if (user) { %>
         <% if (user._id.equals(recipe.author[0]._id)) { %> 

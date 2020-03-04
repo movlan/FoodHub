@@ -7,9 +7,9 @@
         <label>YouTube Link:</label>
         <input type="text" name="youTubeLink" value="<%= recipe.youTubeLink %>" required>
         <label>Directions:</label>
-        <input type="text" name="directions" value="<%= recipe.directions %>" required>
+        <textarea name="directions" required><%= recipe.directions %></textarea>
         <label>Ingredients:</label>
-        <input type="text" name="ingredients" value="<%= recipe.ingredients%>" required>
+        <textarea name="ingredients" required><%= recipe.ingredients%></textarea>
         <input type="submit" value="Update Recipe">
     </form>
 </div>
