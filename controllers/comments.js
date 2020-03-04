@@ -12,8 +12,8 @@ function deleteComment(req, res) {
         recipe.comments.id(req.params.id).remove();
         recipe.save(function(err) {
             res.redirect(`/recipes/${recipe._id}`);
-        })
-    })
+        });
+    });
 }
 
 function update(req, res) {

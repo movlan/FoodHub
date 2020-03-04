@@ -5,6 +5,6 @@ const userCtrl = require('../controllers/users');
 
 
 // router.get('/', userCtrl.index)
-router.get('/:id', userCtrl.show)
+router.get('/:id', userCtrl.show);
 
 module.exports = router;
