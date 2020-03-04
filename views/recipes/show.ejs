@@ -22,7 +22,7 @@
 <% if (user) { %> 
 <div>
     <h3>Add Comment</h3>
-    <form action="/recipes/<%= recipe._id %>/comments" method="POST">
+    <form action="/comments/<%= recipe._id %>" method="POST">
         <label>Comment:</label>
         <textarea name="comment" required></textarea>
         <input type="hidden" name="author" value="<%= user._id %>">
@@ -40,11 +40,8 @@
             <p><%= comment.comment %></p>
         </div>
         <% if (user) { %>
-            <% if (user._id.equals(recipe.author[0]._id)) { %> 
-                <form action="/comments/<%= recipe._id %>/edit" method="GET">
-                    <button type="submit">EDIT</button>
-                </form>
-                <form action="/comments/<%= recipe._id %>?_method=DELETE" method="POST">
+            <% if (user._id.equals(comment.author[0]._id)) { %> 
+                <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
                     <button type="submit">DELETE</button>
                 </form>
             <% } %> 
