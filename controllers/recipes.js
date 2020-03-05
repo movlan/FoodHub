@@ -19,7 +19,7 @@ function deleteRecipe(req, res) {
 
 function update(req, res) {
     Recipe.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, recipe) {
-        res.redirect('/recipes');
+        res.redirect(`/recipes/${recipe._id}`);
     });
 }
 

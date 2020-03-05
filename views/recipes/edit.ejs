@@ -7,10 +7,10 @@
         <label>YouTube Link:</label>
         <input type="text" name="youTubeLink" value="<%= recipe.youTubeLink %>" required>
         <label>Directions:</label>
-        <textarea name="directions" required><%= recipe.directions %></textarea>
+        <textarea class="materialize-textarea" id="t-a-dir" name="directions" required><%= recipe.directions %></textarea>
         <label>Ingredients:</label>
-        <textarea name="ingredients" required><%= recipe.ingredients%></textarea>
-        <input type="submit" value="Update Recipe">
+        <textarea class="materialize-textarea" id="t-a-ing" name="ingredients" required><%= recipe.ingredients%></textarea>
+        <input class="btn cyan waves-effect waves-light white-text" type="submit" value="Update Recipe">
     </form>
 </div>
 

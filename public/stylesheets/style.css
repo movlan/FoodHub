@@ -1,9 +1,16 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: wheat;
+.footer-copyright {
+  color: white;
+  padding: .5rem;
 }
 
-a {
-  color: #00B7FF;
+p {
+  white-space: pre-wrap;
+}
+
+.edit-delete{
+  display: flex;
+}
+button {
+ flex-direction: row;
+ margin: 0 .5rem;
 }

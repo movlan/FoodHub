@@ -1,16 +1,16 @@
 <%- include('../partials/header') %> 
 
-<div>
+<div class="input-field">
     <form action="/recipes" method="POST">
-        <label>Name of Recipe:</label>
-        <input type="text" name="name" required>
+        <label for="first">Name of Recipe:</label>
+        <input id="first" class="validate" type="text" name="name" required>
         <label>YouTube Link:</label>
         <input type="text" name="youTubeLink" required>
         <label>Directions:</label>
-        <textarea name="directions" required></textarea>
+        <textarea class="materialize-textarea" id="t-a-dir" name="directions" required></textarea>
         <label>Ingredients:</label>
-        <textarea name="ingredients" required></textarea>
-        <input type="submit" value="Add Recipe">
+        <textarea class="materialize-textarea" id="t-a-ing" name="ingredients" required></textarea>
+        <input class="btn cyan waves-effect waves-light white-text" type="submit" value="Add Recipe">
     </form>
 </div>
 

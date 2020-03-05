@@ -6,37 +6,39 @@
         <iframe width="853" height="480" src="//www.youtube.com/embed/<%= recipe.youTubeLink.slice(32) %>?rel=0" frameborder="0" allowfullscreen></iframe>
       </div>
     <p> <%= `Directions:` %></p>
-    <p> <%= `${recipe.directions}` %> </p>
+    <p> <%= recipe.directions %> </p>
     <p><%= `Ingredients:` %></p>
-    <p> <%= `${recipe.ingredients}` %></p>
+    <p> <%= recipe.ingredients %></p>
     <p><%= `Submitted by ${recipe.author[0].name}` %></p>
     <% if (user) { %>
-        <% if (user._id.equals(recipe.author[0]._id)) { %> 
-        <form action="/recipes/<%= recipe._id %>/edit" method="GET">
-            <button type="submit">EDIT</button>
-        </form>
-        <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-            <button type="submit">DELETE</button>
-        </form>
+        <% if (user._id.equals(recipe.author[0]._id)) { %>
+            <div class="edit-delete">
+                <form action="/recipes/<%= recipe._id %>/edit" method="GET">
+                    <button class="btn cyan waves-effect waves-light white-text" type="submit">EDIT</button>
+                </form>
+                <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+                    <button class="btn cyan waves-effect waves-light white-text" type="submit">DELETE</button>
+                </form>
+            </div>
         <% } %> 
     <% } %> 
 </div>
 <% if (user) { %> 
 <div>
-    <h3>Add Comment</h3>
+    <h5>Add Comment</h5>
     <form action="/comments/<%= recipe._id %>" method="POST">
         <label>Comment:</label>
-        <textarea name="comment" required></textarea>
+        <textarea class="materialize-textarea" name="comment" required></textarea>
         <input type="hidden" name="author" value="<%= user._id %>">
-        <input type="submit" value="Add Comment">
+        <input class="btn cyan waves-effect waves-light white-text" type="submit" value="Add Comment">
     </form>
 </div>
 <% } %>
-<h3>Comments:</h3>
+<h5>Comments:</h5>
 <% if (recipe.comments.length) { %> 
     <% recipe.comments.forEach(comment => { %>
         <div>
-            <h5><%= comment.author[0].name %></h5>
+            <h6><%= comment.author[0].name %></h6>
         </div>
         <div>
             <p><%= comment.comment %></p>
@@ -44,7 +46,7 @@
         <% if (user) { %>
             <% if (user._id.equals(comment.author[0]._id)) { %> 
                 <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                    <button type="submit">DELETE</button>
+                    <button class="btn cyan waves-effect waves-light white-text" type="submit">DELETE</button>
                 </form>
             <% } %> 
         <% } %>
