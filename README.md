@@ -13,6 +13,23 @@ This is recipe storing app. This app allows users to save favorite recipes from 
 App screenshots:
 
 #### HOME PAGE
+![](/images/landing-page.png)
+
+#### SHOW PAGE
+![](/images/show-recipe.png)
+
+#### ADD RECIPE PAGE
+![](/images/add-recipe-page.png)
+
+#### EDIT RECIPE PAGE
+![](/images/edit-page.png)
+
+
+
+
+App wireframes:
+
+#### HOME PAGE
 ![](/images/home_page.png)
 
 #### SHOW PAGE
@@ -41,14 +58,19 @@ This app is build using following technologies:
    - dotenv
    - passport
    - method-override
+   - Materialize CSS
 -  Database
    -  MongoDB 
     
 **Getting Started**:
 
-[Link to app (not deployed yet)]()
+[Link to Heroku](https://foodhub-sei.herokuapp.com/)
 
 [Link to Trello](https://trello.com/b/FPm3mnkX/user-stories)
-[Link to Heroku](https://foodhub-sei.herokuapp.com/)
+
   
 **Next Steps**: Planned future enhancements (icebox items).
+
+- Ability to search recipe
+- Ability to add recipe to favorites
+- Add category
