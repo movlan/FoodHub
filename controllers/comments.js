@@ -3,7 +3,6 @@ const User = require('../models/user');
 
 module.exports = {
     create,
-    update,
     delete: deleteComment
 }
 
@@ -13,12 +12,6 @@ function deleteComment(req, res) {
         recipe.save(function(err) {
             res.redirect(`/recipes/${recipe._id}`);
         });
-    });
-}
-
-function update(req, res) {
-    Recipe.findOneAndUpdate({comments: req.params.id}, req.body, {new: true}, function(err, comment) {
-        res.redirect('/recipes');
     });
 }
 
