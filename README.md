@@ -49,5 +49,6 @@ This app is build using following technologies:
 [Link to app (not deployed yet)]()
 
 [Link to Trello](https://trello.com/b/FPm3mnkX/user-stories)
+[Link to Heroku](https://foodhub-sei.herokuapp.com/)
   
 **Next Steps**: Planned future enhancements (icebox items).
